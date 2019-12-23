@@ -1,3 +1,5 @@
+'use strict';
+
 let auth0 = null;
 
 const fetchAuthConfig = () => fetch("/auth_config.json");
@@ -14,7 +16,6 @@ const configureClient = async () => {
 
 window.onload = async () => {
   await configureClient();
-  // .. code ommited for brevity
 
   updateUI();
 
@@ -61,7 +62,6 @@ const updateUI = async () => {
     document.getElementById("gated-content").classList.add("hidden");
   }
 };
-
 
 const login = async () => {
   await auth0.loginWithRedirect({
