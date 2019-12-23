@@ -64,7 +64,7 @@ const updateUI = async () => {
 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin
+    redirect_uri: window.location.origin + '/auth0staticsitesample'
   });
 };
 
