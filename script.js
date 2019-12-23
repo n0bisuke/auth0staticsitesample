@@ -1,5 +1,6 @@
 'use strict';
 
+const APPNAME = `auth0staticsitesample`;
 let auth0 = null;
 const fetchAuthConfig = () => fetch("auth_config.json"); //json読み込み
 
@@ -64,12 +65,12 @@ const updateUI = async () => {
 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin + '/auth0staticsitesample'
+    redirect_uri: window.location.origin + '/' + APPNAME
   });
 };
 
 const logout = () => {
   auth0.logout({
-    returnTo: window.location.origin
+    returnTo: window.location.origin + '/' + APPNAME
   });
 };
