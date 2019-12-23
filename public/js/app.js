@@ -39,19 +39,25 @@ const logout = () => {
 /**
  * Retrieves the auth configuration from the server
  */
-const fetchAuthConfig = () => fetch("../auth_config.json");
+// const fetchAuthConfig = () => fetch("/auth0staticsitesample/public/auth_config.json");
+// const fetchAuthConfig = () => ;
 
 /**
  * Initializes the Auth0 client
  */
 const configureClient = async () => {
-  const response = await fetchAuthConfig();
-  const config = await response.json();
+  // const response = await fetchAuthConfig();
+  // const config = await response.json();
 
-  auth0 = await createAuth0Client({
-    domain: config.domain,
-    client_id: config.clientId
-  });
+  // auth0 = await createAuth0Client({
+  //   domain: config.domain,
+  //   client_id: config.clientId
+  // });
+
+   auth0 = {
+    domain: "n0bisuke.auth0.com",
+    client_id: "N9qz4l4j8KqaTvzE01Fr5ijtIsPQPcZl"
+   };
 };
 
 /**
