@@ -36,7 +36,7 @@ window.onload = async () => {
     updateUI();
 
     // Use replaceState to redirect the user away and remove the querystring parameters
-    window.history.replaceState({}, document.title, "/");
+    window.history.replaceState({}, document.title, APP_PATH);
   }
 };
 
@@ -61,7 +61,7 @@ const updateUI = async () => {
     //プロフ画像
     const profile = await auth0.getUser();
     document.getElementById("ipt-user-profile-image").src = profile.picture;
-    
+
   } else {
     document.getElementById("gated-content").classList.add("hidden");
   }
