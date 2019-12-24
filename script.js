@@ -1,8 +1,8 @@
 'use strict';
 
-const APPNAME = `auth0staticsitesample`;
+const APP_PATH = `/auth0staticsitesample`; // https://ユーザー名.github.io/<ココ> or ルートパス利用なら`/`だけでOK
 let auth0 = null;
-const fetchAuthConfig = () => fetch("auth_config.json"); //json読み込み
+const fetchAuthConfig = () => fetch("auth_config.json"); // auth_config.json読み込み
 
 const configureClient = async () => {
   const response = await fetchAuthConfig();
@@ -65,12 +65,12 @@ const updateUI = async () => {
 
 const login = async () => {
   await auth0.loginWithRedirect({
-    redirect_uri: window.location.origin + '/' + APPNAME
+    redirect_uri: window.location.origin + APP_PATH
   });
 };
 
 const logout = () => {
   auth0.logout({
-    returnTo: window.location.origin + '/' + APPNAME
+    returnTo: window.location.origin + APP_PATH
   });
 };
