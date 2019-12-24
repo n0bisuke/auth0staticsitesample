@@ -50,9 +50,9 @@ const updateUI = async () => {
   if (isAuthenticated) {
     document.getElementById("gated-content").classList.remove("hidden");
 
-    document.getElementById(
-      "ipt-access-token"
-    ).innerHTML = await auth0.getTokenSilently();
+    // document.getElementById(
+    //   "ipt-access-token"
+    // ).innerHTML = await auth0.getTokenSilently();
 
     document.getElementById("ipt-user-profile").innerHTML = JSON.stringify(
       await auth0.getUser()
