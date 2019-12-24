@@ -58,6 +58,11 @@ const updateUI = async () => {
       await auth0.getUser()
     );
 
+    //プロフ画像
+    document.getElementById("ipt-user-profile-image").src = JSON.stringify(
+      await auth0.getUser()
+    ).picture;
+
   } else {
     document.getElementById("gated-content").classList.add("hidden");
   }
